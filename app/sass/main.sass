@@ -1,0 +1,691 @@
+@import "fonts"
+@import "libs"
+@import "vars"
+@import "bourbon/bourbon"
+@import "skins/blue"
+@import "skins/pink"
+@import "skins/purple"
+@import "skins/tomato"
+
+
+*::-webkit-input-placeholder
+	color: #666
+	opacity: 1
+
+*:-moz-placeholder
+	color: #666
+	opacity: 1
+
+*::-moz-placeholder
+	color: #666
+	opacity: 1
+
+*:-ms-input-placeholder
+	color: #666
+	opacity: 1
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+	color: #666
+body input:required:valid,
+body textarea:required:valid
+	color: #666
+
+h1,h2,h3,h4,h5,h6
+	margin: 0
+	padding: 0
+
+li,ul
+	list-style: none
+	margin: 0
+	padding: 0
+a,a:link,a:visited,a:active
+	text-decoration: none
+	outline: none
+html, body
+	height: 100%
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.75
+	font-family: $default-font
+	overflow-x: hidden
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+
+section,header
+	position: relative
+
+section
+	padding: 50px 0
+	z-index: 1
+	h2
+		text-align: center
+		font-size: 24px
+		text-transform: uppercase
+
+
+.logo_img
+	height: 80px
+	width: 80px
+	z-index: 100
+	position: relative
+
+.main_head
+	display: flex
+	flex-direction: row
+	justify-content: center
+	align-items: center
+/* Preloader */
+
+@mixin opacity($opacity)
+	opacity: $opacity / 100
+	filter: alpha (opacity=$opacity)
+.preloader
+	position: fixed
+	top: 0
+	bottom: 0
+	right: 0
+	left: 0
+	z-index: 101
+	background-color: $bg_light
+	.pulse
+		position: relative
+		left: 48%
+		top: 50vh
+		margin:
+			top: -40px
+			right: -40px
+		&::before, &::after
+			content: ''
+			border: 5px solid #323232
+			width: 80px
+			height: 80px
+			border-radius: 500px
+			position: absolute
+		&::before
+			animation: pulse-outer .8s ease-in infinite
+		&::after
+			animation: pulse-inner .8s linear infinite
+@keyframes pulse-outer
+	0%
+		@include opacity(100)
+	50%
+		@include opacity(50)
+	100%
+		@include opacity(0)
+
+@keyframes pulse-inner
+	0%
+		@include opacity(0)
+		transform: scale(0)
+	100%
+		@include opacity(100)
+		transform: scale(1)
+
+
+.main_head
+	min-height: 620px
+	padding-top: 20px
+
+.logo_container
+	position: fixed
+	top: 20px
+	left: 20px
+	line-height: 0
+	z-index: 100
+
+.s_descr
+	text-align: center
+
+
+.toggle_menu
+	width: 60px
+	height: 60px
+	right: 20px
+	top: 20px
+	position: fixed
+	z-index: 100
+	border: none
+	outline: none
+	background-color: transparent
+
+/* Hamburger */
+
+.nav_icon
+  transform: rotate(0deg)
+  transition: .5s ease-in-out
+  cursor: pointer
+
+
+.nav_icon span
+  display: block
+  position: absolute
+  height: 3px
+  width: 100%
+  border-radius: 9px
+  opacity: 1
+  left: 0
+  transform: rotate(0deg)
+  transition: .25s ease-in-out
+
+.nav_icon span:nth-child(1)
+  top: 10px
+
+.nav_icon span:nth-child(2)
+  top: 28px
+
+.nav_icon span:nth-child(3)
+  top: 46px
+
+.nav_icon.open span:nth-child(1)
+  top: 28px
+  transform: rotate(135deg)
+
+.nav_icon.open span:nth-child(2)
+  opacity: 0
+  left: -60px
+
+.nav_icon.open span:nth-child(3)
+  top: 28px
+  transform: rotate(-135deg)
+
+/* Nav menu */
+.top_menu
+	position: fixed
+	width: 100%
+	height: 100%
+	background-color: rgba(0,0,0,.9)
+	right: 0
+	top: 0
+	z-index: 50
+	display: none
+	ul
+		position: absolute
+		width: 100%
+		top: 50%
+		left: 50%
+		transform: translate(-50%,-50%)
+		text-align: center
+		li
+			&:nth-child(1) a
+				+animation-duration(.5s)
+			&:nth-child(2) a
+				+animation-duration(1s)
+			&:nth-child(3) a
+				+animation-duration(1.5s)
+			&:nth-child(4) a
+				+animation-duration(2s)
+			a
+				display: block
+				color: #fff
+				padding: 20px 0
+				text-transform: uppercase
+				font-size: 16px
+				transition: all .5s ease
+				position: relative
+				span
+					display: block
+					position: absolute
+					width: 0%
+					top: 0
+					bottom: 0
+					left: 50%
+					transform: translateX(-50%)
+					transition: all .5s ease
+			a:hover span
+				width: 100%
+
+.name_container
+	z-index: 1
+	h1
+		font-size: 2.8em
+		text-align: center
+		font-family: 'europe'
+		+kerning(8)
+		+animation-delay(1.8s)
+	p
+		font-size: 2em
+		text-align: center
+		font-family: 'europe'
+		+kerning(5)
+		+animation-delay(2s)
+
+/* Carousel */
+.about_item
+	display: flex
+	flex-direction: row
+	justify-content: space-between
+	align-items: center
+.owl-nav
+	display: flex
+	flex-direction: row
+	justify-content: space-between
+	position: absolute
+	width: 100%
+	top: 50%
+	div
+		width: 50px
+.owl-theme .owl-dots, .owl-theme .owl-nav
+	text-align: center
+
+.owl-theme .owl-dots .owl-dot
+	display: inline-block
+	zoom: 1
+.owl-carousel .owl-dot, .owl-carousel .owl-nav .owl-next, .owl-carousel .owl-nav .owl-prev
+	cursor: pointer
+	user-select: none
+.owl-theme .owl-dots .owl-dot span
+	width: 10px
+	height: 10px
+	margin: 5px 7px
+	display: block
+	transition: opacity .2s ease
+	border-radius: 30px
+
+.item_subscribe
+	width: 35%
+	+kerning(3)
+	p
+		text-align: center
+		margin: 5px 0
+		+kerning(3)
+
+.item_example
+	width: 60%
+	min-height: 600px
+	position: relative
+
+$sunSize: 80px
+
+.css_3 .item_example
+		background-color: #80CEC7
+		overflow: hidden
+		animation-name: night
+		animation-iteration-count: infinite
+		animation-duration: 40s
+		animation-timing-function: ease-in
+		img
+			position: absolute
+		.mountains
+			left: 0
+			bottom: 0
+			z-index: 1
+		.ship
+			left: 0
+			bottom: 50px
+			width: 100px
+			z-index: 2
+			animation-name: ship
+			animation-iteration-count: infinite
+			animation-duration: 30s
+			animation-timing-function: linear
+			animation-direction: alternate
+			animation-fill-mode: backwards
+		.water
+			left: 0
+			bottom: 0
+			z-index: 3
+		.clouds
+			width: 380px
+			top: 5px
+			right: -380px
+			animation-name: clouds
+			animation-iteration-count: infinite
+			animation-duration: 20s
+			animation-timing-function: ease-in
+			z-index: 1
+
+		.sun
+			width: $sunSize
+			top: 20px
+			left: 50%
+			transform-origin: 50px 475px
+			transform: rotateZ(0deg)
+			animation-name: Rising
+			animation-iteration-count: infinite
+			animation-duration: 40s
+			animation-timing-function: linear
+
+@keyframes clouds
+	to
+		right: 100%
+
+@keyframes Rising
+  0%
+    transform: rotateZ(0deg)
+  100%
+    transform: rotateZ(360deg)
+
+@keyframes night
+	15%
+		background-color: #e67e22
+	35%
+		background-color: #2c3e50
+	65%
+		background-color: #2c3e50
+	75%
+		background-color: #e67e22
+	100%
+		background-color: #80CEC7
+
+@keyframes ship
+	to
+		left: 100%
+
+
+
+/* Chart */
+
+.chart_btn_wrapper
+	text-align: center
+	width: 100%
+	margin-top: 50px
+	.chart_btn
+		border: none
+		font-family: inherit
+		font-size: inherit
+		color: inherit
+		background: none
+		cursor: pointer
+		padding: 10px 0
+		display: inline-block
+		margin: 0
+		margin-right: 15px
+		text-transform: uppercase
+		letter-spacing: 1px
+		font-weight: 700
+		outline: none
+		position: relative
+		transition: all 0.3s
+		border: 3px solid #848484
+		overflow: hidden
+		width: 20%
+		&:last-child
+			margin-right: 0
+		&:after
+			content: ''
+			position: absolute
+			z-index: -1
+			transition: all 0.3s
+			width: 100%
+			height: 0
+			top: 50%
+			left: 50%
+			background: #848484
+			opacity: 0
+			transform: translateX(-50%) translateY(-50%) rotate(45deg)
+		&:hover,&:active
+			color: #fff
+		&:hover:after
+			height: 200%
+			opacity: 1
+		&:active:after
+			height: 400%
+			opacity: 1
+
+.item_example,
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	flex-direction: column
+	justify-content: center
+	align-items: center
+
+.item_example_mobile
+	display: none
+
+.helper
+	display: inline-block
+	width: 100%
+	height: 0
+	margin: 0
+	padding: 0
+	line-height: 0
+
+
+@keyframes loader7
+    0%
+    	left: -12px
+    	top: -12px
+    25%
+    	left: 42px
+    	top: -12px
+    50%
+    	left: 42px
+    	top: 42px
+    75%
+    	left: -12px
+    	top: 42px
+    100%
+    	left: -12px
+    	top: -12px
+
+
+@keyframes loader72
+    0%
+    	width: 0px
+    70%
+    	width: 40px
+    	opacity: 1
+    90%
+    	opacity: 0
+    	width: 40px
+    100%
+    	opacity: 0
+    	width: 0px
+
+
+
+//Technologies block
+.technologies
+	.item_example
+		padding-left: 50px
+		justify-content: space-around
+		.tech_wrapp
+			position: relative
+			width: 100%
+			margin: 10px 0
+			cursor: pointer
+			.tech_descr
+				width: 70%
+				font-size: 14px
+				text-align: center
+				opacity: 0
+				transition: all 2s ease
+			.tech_icon_wrapp
+				position: absolute
+				top: 0
+				right: 0
+				width: 100%
+				height: 100%
+				transition: all 2s ease
+				padding-left: 25px
+				overflow: hidden
+				.tech_icon
+					width: auto
+					height: 100%
+					display: inline-block
+					vertical-align: top
+					max-width: 100px
+				.tech_icon_descr
+					display: inline-block
+					font-size: 24px
+					text-align: right
+					width: 75%
+					transition: all 2s ease
+			&:hover .tech_icon_wrapp
+				width: 25%
+			&:hover .tech_icon_descr
+				opacity: 0
+			&:hover .tech_descr
+				opacity: 1		
+			.gulp
+				padding-left: 0
+				.tech_icon_descr
+					padding-right: 55px
+//Portfolio
+.s_products
+	ul,
+	li
+		padding: 0
+		margin: 0
+		text-align: center
+	li
+		display: inline-block
+		margin: 0 10px
+		text-transform: uppercase
+		font-size: 12px
+		cursor: pointer
+		line-height: 2
+		transition: all .3s ease
+	ul
+		margin-bottom: 50px
+		
+.portfolio_item
+ 	display: none
+ 	padding: 0
+ 	img
+ 		width: 100%
+
+.hover_content
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	background-color: rgba(0,0,0,.7)
+	text-align: center
+	padding-top: 15%
+	opacity: 0
+	transition: all .5s ease
+	&:hover
+		opacity: 1
+		padding-top: 20%
+	h3,p
+		color: #fff
+	a
+		background-color: transparent
+		border: 1px solid
+		padding: 2px 10px
+		display: inline-block
+
+.port_item_descr
+	background-color: #fff
+	max-width: 500px
+	margin: 0 auto
+	position: relative
+	p,
+	h3
+		padding: 20px
+		padding-bottom: 0
+	h3
+		margin-bottom: 0
+		margin-top: 20px
+		text-transform: uppercase
+		text-align: center
+		font-weight: 400
+	img
+		width: 100%
+
+.contact_box
+	margin-bottom: 20px
+	h3
+		text-align: left
+		color: #000
+		margin-bottom: 10px
+	p
+		margin-bottom: 0
+.main_form
+	button
+		border: none
+		color: #fff
+		line-height: 32px
+		padding: 10px 35px
+		font-size: 16px
+		text-transform: uppercase
+		font-weight: 600
+		margin-top: 25px
+		float: right
+	button:focus
+		outline: none
+
+.form-group
+	display: block
+	input,
+	textarea
+		display: block
+		width: 100%
+		border: 1px solid #ccc
+		margin-top: 5px
+		line-height: 40px
+		text-indent: 15px
+		font-size: 12px
+		background-color: transparent
+
+.success_block
+	position: absolute
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	text-transform: uppercase
+	font-weight: bold
+	display: none
+	flex-direction: column
+	justify-content: center
+	z-index: 10
+	background-color: rgba(221,219,219,.6)
+	span
+		margin: 0 auto
+		font-size: 24px
+		color: $color
+	& ~*
+		transition: all .5s ease
+	&.active
+		& ~*
+			opacity: .5
+			filter: blur (10px)
+
+.close_succes
+    display: block
+    position: absolute
+    top: 10px
+    right: 10px
+    border-radius: 10em
+    background-color: $color
+    width: 30px
+    height: 30px
+    line-height: 30px
+    text-align: center
+    font-size: 20px
+    color: #fff
+
+.top
+	position: fixed
+	bottom: 25px
+	right: -100px
+	z-index: 12
+	border-radius: 10em
+	width: 50px
+	height: 50px
+	cursor: pointer
+	transition: all .25s ease
+	opacity: .5
+	z-index: 1
+	img
+		width: 100%
+	&:hover
+		width: 65px
+		height: 65px
+		opacity: 1
+	&.active
+		right: 25px
+@import "media" // Всегда в конце

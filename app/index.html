@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+	<meta charset="utf-8">
+
+	<title>Title</title>
+	<meta name="description" content="">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<meta property="og:image" content="path/to/image.jpg">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.js"></script>
+	<link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-touch-icon-114x114.png">
+
+	<!-- Chrome, Firefox OS and Opera -->
+	<meta name="theme-color" content="#000">
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#000">
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#000">
+
+</head>
+
+<body>
+
+	<div class="preloader"><div class="pulse"></div></div>
+
+	<header class="main_head" id="home" data-parallax="scroll" data-z-index="1" data-image-src="img/bg.jpg" data-position="">
+		<div class="logo_container" id="logo">
+			<svg class="logo_img"
+			viewBox="0 0 267 300"
+			version="1.1"
+			xmlns="http://www.w3.org/2000/svg">
+		    <defs></defs>
+		    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+		        <path d="M257.017722,150.50482 L257.017722,5.09018008 C257.017722,2.33037637 259.252331,0.0931134251 262.008861,0.0931134251 C264.765391,0.0931134251 267,2.33037637 267,5.09018008 L267,294.920046 C267,297.67985 264.765391,299.917113 262.008861,299.917113 C259.252331,299.917113 257.017722,297.67985 257.017722,294.920046 L257.017722,160.498953 L177.159494,160.498953 L177.159494,294.920046 C177.159494,297.67985 174.924885,299.917113 172.168355,299.917113 C169.411825,299.917113 167.177215,297.67985 167.177215,294.920046 L167.177215,160.498953 L88.8163295,160.498953 C88.6098311,160.498953 88.4062616,160.486398 88.2063411,160.462008 L9.5125784,296.925474 C7.92645425,299.675984 4.70541811,300.787082 2.31819307,299.40718 C-0.0690320464,298.027278 -0.718452488,294.678917 0.867671666,291.928407 L167.439718,3.07452602 C167.762473,2.51483468 168.152924,2.023026 168.590271,1.60627521 C169.079026,1.10320156 169.672715,0.702843986 170.335959,0.440623732 C171.746076,-0.171571349 173.316999,-0.16851407 174.634104,0.592819989 C175.328252,0.994062914 175.875468,1.56174086 176.263514,2.23276006 C176.828252,3.04253539 177.159494,4.02762899 177.159494,5.09018008 L177.159494,150.50482 L257.017722,150.50482 L257.017722,150.50482 Z M167.177215,23.5180012 L93.9483074,150.50482 L167.177215,150.50482 L167.177215,23.5180012 L167.177215,23.5180012 Z" id="nigen" fill="#000000" fill-rule="nonzero"></path>
+		    </g>
+		</svg>
+		</div>
+		<button class="nav_icon toggle_menu">
+		  <span></span>
+		  <span></span>
+		  <span></span>
+		</button>
+		<nav class="top_menu">
+			<ul>
+				<li class="menu_item"><a href="#home">Home</a></li>
+				<li class="menu_item"><a href="#about">About</a></li>
+				<li class="menu_item"><a href="#products">Products</a></li>
+				<li class="menu_item"><a href="#contacts">Contact</a></li>
+			</ul>
+		</nav>
+		<div class="name_container">
+			<h1>Company Name</h1>
+			<p>Company description</p>
+		</div>
+	</header>
+	<section id="about" class="section_about bg_light">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="s_descr_wrap">
+						<h2 class="s_header">About</h2>
+						<p class="s_descr">Description</p>
+					</div>
+					<div class="owl-carousel owl-theme">
+
+						<div class="about_item css_3">
+							<div class="item_subscribe">
+								<h2>Feel the power!</h2>
+								<p>Say "Hello" to amazing effects without JS.</p>
+								<p>Sometimes a designer does really cool things ... sometimes.</p>
+							</div>
+							<div class="item_example ">
+								<img src="img/animation/mountains.svg" alt="#" class="mountains">
+								<img src="img/animation/wooden-ship.svg" alt="#" class="ship">
+								<img src="img/animation/water.svg" alt="#" class="water">
+								<img src="img/animation/clouds2.svg" alt="#" class="clouds">
+								<img src="img/animation/sun-small.svg" alt="#" class="sun">
+							</div>
+						</div>
+						<div class="about_item chart">
+							<div class="item_subscribe ">
+								<h2>Data visualization</h2>
+								<p>The use of JS provides an opportunity to look at the information in a new way</p>
+							</div>
+							<div class="item_example">
+								<div class="chart-container" style="position: relative; height:100%; width:100%">
+									<canvas id="myChart"></canvas>
+								</div>
+								<div class="chart_btn_wrapper">
+									<button id="bar" class="chart_btn">Default</button>
+									<button id="horizontalBar" class="chart_btn ">Bar</button>
+									<button id="pie" class="chart_btn">Pie</button>
+									<button id="line" class="chart_btn">Line</button>
+								</div>
+							</div>
+						</div>
+						<div class="about_item responsive_css">
+							<div class="item_subscribe">
+								<h2>Responsive design</h2>
+								<p>"If your materials, content, information, products, services are not available in a mobile environment, then for these people they do not exist at all"</p>
+							</div>
+							<div class="item_example">
+								<img src="img/respons.svg" alt="#" class="responsive_logo">
+							</div>
+						</div>
+						<div class="about_item technologies">
+							<div class="item_subscribe">
+								<h2>Progressive technologies</h2>
+								<p>Pieces that make the developer's life easier.</p>
+								<p>... and there is no point in telling the customer.</p>
+							</div>
+							<div class="item_example main_color_bg m_hide">
+								<div class="tech_wrapp">
+									<p class="tech_descr">Git is a system that registers changes in one or more files in order to later be able to return to certain old versions of these files</p>
+									<div class="tech_icon_wrapp main_color_bg git">
+										<img src="img/git-icon.svg" alt="#" class="tech_icon">
+										<p class="tech_icon_descr">Version control systems</p>
+									</div>
+								</div>
+								<div class="tech_wrapp">
+									<p class="tech_descr">Gulp is a web application build tool that allows you to automate repetitive tasks, such as assembling and minimizing CSS and JS files, running tests and so on.</p>
+									<div class="tech_icon_wrapp main_color_bg gulp">
+										<img src="img/gulp.svg" alt="#" class="tech_icon">
+										<p class="tech_icon_descr">Project builders</p>
+									</div>
+								</div>
+								<div class="tech_wrapp">
+									<p class="tech_descr">Wordpress is the most popular and easy to use content management system for small sites.</p>
+									<div class="tech_icon_wrapp main_color_bg wp">
+										<img src="img/wordpress-icon.svg" alt="#" class="tech_icon">
+										<p class="tech_icon_descr">Content management system</p>
+									</div>
+								</div>
+							</div>
+							<div class="item_example_mobile">
+								<img src="img/git-icon.svg" alt="#" class="tech_icon">
+								<img src="img/gulp.svg" alt="#" class="tech_icon">
+								<img src="img/wordpress-icon.svg" alt="#" class="tech_icon">
+								<p>Another text</p>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id="products" class="s_products bg_dark">
+		<div class="container">
+			<div class="s_descr_wrap">
+				<h2 class="s_header">About</h2>
+				<p class="s_descr">Description</p>
+			</div>
+			<div class="row">
+				<div class="products_wrapper">
+					<div class="filter_div controls">
+						<ul class="portfolio_nav">
+							<li class="active filter portfolio_nav_item" data-filter="all">All</li>
+							<li class="filter portfolio_nav_item" data-filter=".category_1">Sites</li>
+							<li class="filter portfolio_nav_item" data-filter=".category_2">Logos</li>
+							<li class="filter portfolio_nav_item" data-filter=".category_3">Fun</li>
+						</ul>
+					</div>
+					<div id="product_grid">
+						<div class="mix col-md-3 col-sm-6 col-xs-6 portfolio_item category_1">
+							<img src="img/portfolio-images/1.jpg" alt="Alt">
+							<div class="hover_content">
+								<h3>Item name</h3>
+								<p>Item description</p>
+								<a href="#" class="popup">View</a>
+							</div>
+							<div class="hidden">
+								<div class="port_item_descr">
+									<button class="mfp-close" type="button" title="Закрыть (Esc)">×</button>
+									<h3>Item name</h3>
+									<p>Some short work description. But not to short. Maybe long description...or just do it like that actor.</p>
+									<img src="img/portfolio-images/1.jpg" alt="Alt">
+								</div>
+							</div>
+						</div>
+						<div class="mix col-md-3 col-sm-6 col-xs-6 portfolio_item category_3">
+							<img src="img/portfolio-images/2.jpg" alt="Alt">
+							<div class="hover_content">
+								<h3>Item name</h3>
+								<p>Item description</p>
+								<a href="#" class="popup">View</a>
+							</div>
+							<div class="hidden">
+								<div class="port_item_descr">
+									<button class="mfp-close" type="button" title="Закрыть (Esc)">×</button>
+									<h3>Item name</h3>
+									<p>Some short work description. But not to short. Maybe long description...or just do it like that actor.</p>
+									<img src="img/portfolio-images/2.jpg" alt="Alt">
+								</div>
+							</div>
+						</div>
+						<div class="mix col-md-3 col-sm-6 col-xs-6 portfolio_item category_1">
+							<img src="img/portfolio-images/3.jpg" alt="Alt">
+							<div class="hover_content">
+								<h3>Item name</h3>
+								<p>Item description</p>
+								<a href="#" class="popup">View</a>
+							</div>
+							<div class="hidden">
+								<div class="port_item_descr">
+									<button class="mfp-close" type="button" title="Закрыть (Esc)">×</button>
+									<h3>Item name</h3>
+									<p>Some short work description. But not to short. Maybe long description...or just do it like that actor.</p>
+									<img src="img/portfolio-images/3.jpg" alt="Alt">
+								</div>
+							</div>
+						</div>
+						<div class="mix col-md-3 col-sm-6 col-xs-6 portfolio_item category_2">
+							<img src="img/portfolio-images/4.jpg" alt="Alt">
+							<div class="hover_content">
+								<h3>Item name</h3>
+								<p>Item description</p>
+								<a href="#" class="popup">View</a>
+							</div>
+							<div class="hidden">
+								<div class="port_item_descr">
+									<button class="mfp-close" type="button" title="Закрыть (Esc)">×</button>
+									<h3>Item name</h3>
+									<p>Some short work description. But not to short. Maybe long description...or just do it like that actor.</p>
+									<img src="img/portfolio-images/4.jpg" alt="Alt">
+								</div>
+							</div>
+						</div>
+						<div class="mix col-md-3 col-sm-6 col-xs-6 portfolio_item category_3">
+							<img src="img/portfolio-images/5.jpg" alt="Alt">
+							<div class="hover_content">
+								<h3>Item name</h3>
+								<p>Item description</p>
+								<a href="#" class="popup">View</a>
+							</div>
+							<div class="hidden">
+								<div class="port_item_descr">
+									<button class="mfp-close" type="button" title="Закрыть (Esc)">×</button>
+									<h3>Item name</h3>
+									<p>Some short work description. But not to short. Maybe long description...or just do it like that actor.</p>
+									<img src="img/portfolio-images/5.jpg" alt="Alt">
+								</div>
+							</div>
+						</div>
+						<div class="mix col-md-3 col-sm-6 col-xs-6 portfolio_item category_2">
+							<img src="img/portfolio-images/6.jpg" alt="Alt">
+							<div class="hover_content">
+								<h3>Item name</h3>
+								<p>Item description</p>
+								<a href="#" class="popup">View</a>
+							</div>
+							<div class="hidden">
+								<div class="port_item_descr">
+									<button class="mfp-close" type="button" title="Закрыть (Esc)">×</button>
+									<h3>Item name</h3>
+									<p>Some short work description. But not to short. Maybe long description...or just do it like that actor.</p>
+									<img src="img/portfolio-images/6.jpg" alt="Alt">
+								</div>
+							</div>
+						</div>
+						<div class="mix col-md-3 col-sm-6 col-xs-6 portfolio_item category_1">
+							<img src="img/portfolio-images/7.jpg" alt="Alt">
+							<div class="hover_content">
+								<h3>Item name</h3>
+								<p>Item description</p>
+								<a href="#" class="popup">View</a>
+							</div>
+							<div class="hidden">
+								<div class="port_item_descr">
+									<button class="mfp-close" type="button" title="Закрыть (Esc)">×</button>
+									<h3>Item name</h3>
+									<p>Some short work description. But not to short. Maybe long description...or just do it like that actor.</p>
+									<img src="img/portfolio-images/7.jpg" alt="Alt">
+								</div>
+							</div>
+						</div>
+						<div class="mix col-md-3 col-sm-6 col-xs-6 portfolio_item category_2">
+							<img src="img/portfolio-images/8.jpg" alt="Alt">
+							<div class="hover_content">
+								<h3>Item name</h3>
+								<p>Item description</p>
+								<a href="#" class="popup">View</a>
+							</div>
+							<div class="hidden">
+								<div class="port_item_descr">
+									<button class="mfp-close" type="button" title="Закрыть (Esc)">×</button>
+									<h3>Item name</h3>
+									<p>Some short work description. But not to short. Maybe long description...or just do it like that actor.</p>
+									<img src="img/portfolio-images/8.jpg" alt="Alt">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id="contacts" class="s_contact bg_light">
+		<div class="container">
+			<div class="s_descr_wrap">
+				<h2 class="s_header">Contacts</h2>
+				<p class="s_descr">Description</p>
+			</div>
+			<div class="row">
+				<div class="col-md-6 col-sm-6">
+					<div class="contact_box">
+
+						<h3>Adress:</h3>
+						<p>Location of company</p>
+
+					</div>
+					<div class="contact_box">
+
+						<h3>Phone:</h3>
+						<p>+35 005 5454 05</p>
+
+					</div>
+					<div class="contact_box">
+
+						<h3>Web site:</h3>
+						<p>www.site.com</p>
+
+					</div>
+				</div>
+				<div class="col-md-6 col-sm-6">
+					<form class="main_form callback" novalidate target="_blank" >
+							<div class="success_block"><a href="#" class="close_succes" onclick="event.preventDefault(); $('.success').removeClass('active').hide();" style="color: #fff">x</a><span>Your email sent, we reply you shortly!</span></div>
+						<!-- Hidden Required Fields -->
+							<input type="hidden" name="project_name" value="portfolio">
+							<input type="hidden" name="admin_email" value="vatslav.zoltan@gmail.com"><!-- Admin email -->
+							<input type="hidden" name="form_subject" value="Portfolio application">
+							<input type="hidden" name="Coolibra page" value="">
+						<!-- END Hidden Required Fields -->
+						<label class="form-group">
+							<span class="color_element">*</span> Your name:
+							<input type="text" name="name" placeholder="Your name" data-validation-required-message="You did not enter a name" required />
+							<span class="help-block text-danger"></span>
+						</label>
+						<label class="form-group">
+							<span class="color_element">*</span> Your E-mail:
+							<input type="email" name="email" placeholder="Your E-mail" data-validation-required-message="Not a valid E-mail" required />
+							<span class="help-block text-danger"></span>
+						</label>
+						<label class="form-group">
+							<span class="color_element">*</span> Your message:
+							<textarea name="message" placeholder="Your message" data-validation-required-message="You did not enter a message" required></textarea>
+							<span class="help-block text-danger"></span>
+						</label>
+						<button>Submit</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+	<footer class="footer bg_dark">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">&copy; 2017 A. Huts</div>
+			</div>
+		</div>
+	</footer>
+	<div class="top" title="To Top">
+		<img src="img/top.png" alt="top icon" class="top-icon">
+	</div>
+
+
+	
+	<link rel="stylesheet" href="css/main.min.css">
+	<script src="js/scripts.min.js"></script>
+	<script type="text/javascript">
+		let myChart = document.getElementById('myChart').getContext('2d');
+		var w_width = $(window).width();
+		if (w_width < 480) {
+			Chart.defaults.global.defaultFontSize = 8;
+		} else {
+			Chart.defaults.global.defaultFontSize = 18;
+		}
+	    //Global Options
+	    Chart.defaults.global.defaultFontColor = '#777';
+
+	    let massPopChart = new Chart(myChart, {
+	      type: 'bar',// bar, horizontalBar, pie, line, doughnut, radar, polarArea
+	      data:{
+	        labels:['1800', '1850', '1900', '1950', '2000', '2017'],
+	        datasets:[{
+	    		label:'Number of inhabitants (thousands)',
+	          data:[
+	            60.5,
+	            515.5,
+	            1850.65,
+	            1960.42,
+	            1537.3,
+	            1644.8
+	          ],
+	          backgroundColor:[
+	            'rgba(85,86,80, 0.5)',
+	            'rgba(85,86,80, 0.6)',
+	            'rgba(85,86,80, 0.9)',
+	            'rgba(85,86,80, 1)',
+	            'rgba(85,86,80, 0.7)',
+	            'rgba(85,86,80, 0.8)',
+	          ],
+	          borderWidth:1,
+	          borderColor:'#777',
+	          hoverBorderWidth:3,
+	          hoverBordercolor:'#ff0000'
+	        }]
+	      },
+	      options: {
+	        title:{
+	          display:true,
+	          text:'The population of Brooklyn between 1800 and 2017',
+	          fontSize:25
+	        },
+	        events: []
+	      }
+	    });
+
+    $('.chart_btn').click(function () {
+    	$('.chartjs-hidden-iframe').remove();
+    	var atr = $(this).attr('id');
+    	console.log(atr);
+		let myChart = document.getElementById('myChart').getContext('2d');
+		var w_width = $(window).width();
+
+		if (w_width < 480) {
+			Chart.defaults.global.defaultFontSize = 8;
+		} else {
+			Chart.defaults.global.defaultFontSize = 18;
+		}
+	    //Global Options
+	    Chart.defaults.global.defaultFontColor = '#777';
+
+	    let massPopChart = new Chart(myChart, {
+	      type: atr,// bar, horizontalBar, pie, line, doughnut, radar, polarArea
+	      data:{
+	        labels:['1800', '1850', '1900', '1950', '2000', '2017'],
+	        datasets:[{
+	    		label:'Number of inhabitants (thousands)',
+	          data:[
+	            60.5,
+	            515.5,
+	            1850.65,
+	            1960.42,
+	            1537.3,
+	            1644.8
+	          ],
+	          backgroundColor:[
+	            'rgba(85,86,80, 0.5)',
+	            'rgba(85,86,80, 0.6)',
+	            'rgba(85,86,80, 0.9)',
+	            'rgba(85,86,80, 1)',
+	            'rgba(85,86,80, 0.7)',
+	            'rgba(85,86,80, 0.8)',
+	          ],
+	          borderWidth:1,
+	          borderColor:'#777',
+	          hoverBorderWidth:3,
+	          hoverBordercolor:'#ff0000'
+	        }]
+	      },
+	      options: {
+	        title:{
+	          display:true,
+	          text:'The population of Brooklyn between 1800 and 2017',
+	          fontSize:25
+	        },
+	        events: [],
+
+	      }
+	    });
+
+    });
+  </script>
+  
+</body>
+</html>

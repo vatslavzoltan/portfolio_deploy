@@ -1,1 +1,1 @@
-# portfolio_deploy
+# Portfolio LP (without backend)

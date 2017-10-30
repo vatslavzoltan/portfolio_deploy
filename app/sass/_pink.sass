@@ -1,0 +1,124 @@
+@import "../bourbon/bourbon"
+
+$color: #D60270 //Theme skin
+$text_color: #888
+$main_color: #222
+$bg_light: #FAFAFA
+
+@mixin kerning($kerning)
+	letter-spacing: $kerning + px
+
+body
+	color: $text_color
+
+a
+	color: $color
+
+
+.logo_img
+	path
+	 fill: $main_color
+
+.color_element
+	color: $color
+.color_bg
+	background-color: $color
+.color_border
+	border-color: $color
+
+.main_color_bg
+	background-color: $main_color
+
+.bg_light
+	background-color: $bg_light
+
+.bg_dark
+	background-color: $bg_dark
+	color: #fff
+	.s_descr::after
+		background-color: #fff
+	a
+		color: #fff
+
+
+section
+	h3
+		+kerning(3)
+		color: $text_color
+
+form
+	input:focus,
+	textarea:focus
+		border: 1px solid $color
+	input,
+	textarea
+		+kerning(2)
+	button
+		background-color: $color
+		+kerning(2)
+	.form-group
+		+kerning(2)
+		color: $text_color
+
+.nav_icon span
+	background: $main_color
+
+.top_menu
+	a:hover
+		color: $color
+	span
+		background-color: rgba(255,255,255,.05) 
+	a
+		+kerning(4)
+
+.name_container
+	h1
+		color: $main_color
+	p
+		color: $bg_light
+
+.owl-dot
+	span
+		background-color: $main_color
+.owl-dot.active
+	span
+		background-color: $bg_dark
+
+.s_products
+ 	li
+ 		+kerning(2)
+ 		color: $text_color
+ 		&.active
+ 			color: #fff
+ 			border-bottom: 1px solid $color
+
+.hover_content
+	a
+		border-color: $color
+		color: $color
+
+.contact_box
+	p
+		color: $color
+
+.text-danger
+	color: $color 
+
+form
+	input:focus,
+	textarea:focus,
+		border: 1px solid $color
+		outline: none
+	input,
+	textarea
+		+kerning(2)
+	button
+		background-color: $color
+		+kerning(2)
+	.form-group
+		+kerning(2)
+		color: $text_color
+	input::placeholder,
+	textarea::placeholder
+		color: $text_color
+

@@ -1,0 +1,102 @@
+@import "vars"
+
+/*==========  Desktop First  ==========*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px)
+	body
+		font-size: 14px
+	.technologies .item_example .tech_wrapp .tech_icon_wrapp .tech_icon
+		max-width: 70px
+	.css_3 .item_example .ship
+		bottom: 35px
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px)
+	.about_item
+		display: block
+		.item_subscribe
+			width: 100%
+		.item_example
+			width: 100%
+			min-height: 500px
+	.css_3 .item_example .ship
+		bottom: 50px
+
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px)
+	.logo_img,.toggle_menu
+		width: 45px
+		height: auto
+	.nav_icon span
+		height: 2px
+
+
+	.item_example_mobile
+	  display: initial
+
+	.technologies .item_example_mobile
+		font-size: 0
+		text-align: justify
+		img
+			width: 100px
+			margin: 50px auto 0
+		p
+			font-size: 24px
+			text-align: center
+			padding-bottom: 20px
+			border-bottom: 2px solid #999
+
+
+	.m_hide
+		display: none !important
+	
+	.item_subscribe p
+		color: $color
+
+	.item_example
+		min-height: auto
+
+	.css_3 .item_example .ship
+	    bottom: 25px
+	    
+	.chart_btn_wrapper .chart_btn
+		font-size: 8px
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px)
+	.name_container h1
+		font-size: 2em
+
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 320px)
+	/**/
+
+
+/*==========  Mobile First  ==========*/
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width : 320px)
+	/**/
+
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width : 480px)
+	/**/
+
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px)
+	/**/
+
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px)
+	/**/
+
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px)
+	/**/
+
